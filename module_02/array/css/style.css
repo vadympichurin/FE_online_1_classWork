@@ -1,0 +1,21 @@
+.js-add-btn {
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+.js-add-btn:hover {
+    background-color: rgb(12, 132, 245);
+}
+
+.js-calc-btn {
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+.js-calc-btn:hover {
+    background-color: rgb(100, 172, 53);
+}
