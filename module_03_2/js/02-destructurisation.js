@@ -60,7 +60,29 @@ const profile = {
 };
 
 
-const { name, tag, location, avatar, status: {followers, likes, views} } = profile;
+// const { name, tag, location, avatar, status: {followers, likes, views} } = profile;
+
+const {name, location, ...props} = profile;
+
+console.log(name, location);
+console.log(props);
+
 // const { followers, views, likes } = status;
 
-console.log(likes);
+// console.log(likes);
+
+
+//  arrays
+
+// const { name, tag } = profile;
+
+
+const rgb = [255, 123, 77];
+
+// const red = rgb[0];
+// const green = rgb[1];
+// const blue = rgb[2];
+
+// const [, , blue] = rgb;
+
+// console.log( blue);

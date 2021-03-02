@@ -39,23 +39,5 @@ console.log(makeup);
 document.body.insertAdjacentHTML("afterbegin", makeup);
 
 
-let a = 0;
-
-a = 5; // norm
-
-// let a = 9; // error
-
-const b = 6;
-// b = 7; // error
-
-console.log('var :', c);
-var c = 5;
-console.log('var :', c);
-
-var c = 'hello'; // norm
-console.log('var :', c);
-
-c = 'popopipo';
-console.log('var :', c);
 
 
