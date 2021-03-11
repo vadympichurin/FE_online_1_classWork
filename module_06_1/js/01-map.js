@@ -4,15 +4,15 @@
  * Возвращает новый массив такой же длины
  */
 
-const numbers = [5, 8, 10, 15, 35];
+// const numbers = [5, 8, 10, 15, 35];
 
-const doubledNumbers = numbers.map(function (number) {
+// const doubledNumbers = numbers.map(function (number) {
   //   console.log(number);
   //   console.log(index);
   //   console.log(array);
 
-  return number * 2;
-});
+  // return number * 2;
+// });
 
 // console.log(doubledNumbers);
 
@@ -31,7 +31,6 @@ const players = [
  */
 
 const playersNames = players.map(function (player) {
-  // console.log(player);
   return player.name;
 });
 
@@ -70,3 +69,32 @@ const increaseTime = players.map(function (player) {
 });
 
 // console.log(increaseTime);
+
+/**
+ * ======== Пишем .map() своими руками ============
+ * 
+ * - создает и возвращает новый массив
+ * - перебирает оригинальный массив
+ * - вызывает коллбек для каждого элемента и кидает туда аргументы (элеметн, индекс, массив)
+ * - записывает результат вызова функции в новый массив
+  */
+ const numbers = [5, 8, 10, 15, 35];
+
+ const map = function(array, callback){
+   const newArray = [];
+   
+   for(let i = 0; i < array.length; i += 1){
+    newArray.push(callback(array[i], i, array));
+   }
+   
+   return newArray;
+ };
+
+
+ const doubledNumbers = map(numbers, function(item, index, array){
+   return item * 2;
+ });
+
+ console.log('doubledNumbers : ', doubledNumbers);
+
+

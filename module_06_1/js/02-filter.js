@@ -6,11 +6,11 @@
  */
 
 
- const numbers = [5,8,10,15,35];
+//  const numbers = [5,8,10,15,35];
 
- const newNumbers = numbers.filter(function(number){
-      return number > 5 && number < 18;
- });
+//  const newNumbers = numbers.filter(function(number){
+    //   return number > 5 && number < 18;
+//  });
 
 //  console.log(newNumbers);
 
@@ -57,3 +57,33 @@ const bestPlayers = players.filter(function(item) {
 
 // console.log(bestPlayers);
 
+/**
+ * ======= Фильтр своими руками =======
+ * - создает новый массив и возвращает его
+ * - вызывает коллбек для каждого элемента
+ * - если коллбек вернул true пишет элемент в новый массив
+ */
+
+ const numbers = [5, 8, 10, 15, 35];
+
+ const filter = function(array, callback){
+     const newArray = [];
+
+     for(let i = 0; i < array.length; i += 1) {
+        const result = callback(array[i], i, array);
+
+        if(result){
+            newArray.push(array[i]);
+        }
+     }
+
+     return newArray;
+ }
+
+ const filteredNumbers = filter(numbers, function(number, index, array){
+     console.log(number);
+
+    return number > 9;
+ });
+
+ console.log('filteredNumbers : ', filteredNumbers);
