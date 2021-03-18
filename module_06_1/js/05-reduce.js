@@ -99,7 +99,7 @@ const allTags = tweets.reduce(function(acc, tweet){
     return [...acc, ...tweet.tags];
 }, []);
 
-console.log('allTags : ', allTags);
+// console.log('allTags : ', allTags);
 
 
 /**
@@ -117,18 +117,11 @@ const test = {};
 test.name = "mango";
 
 
-console.log('test : ', test);
+// console.log('test : ', test);
 
 const tagsStatistic = allTags.reduce(function(acc, item){
-    
-    if(acc.hasOwnProperty(item)){
-        acc[item] += 1;
-        return acc;
-    }
-
-    acc[item] = 1;
+    acc[item] = acc.hasOwnProperty(item) ? acc[item] += 1 : 1;
     return acc;
-
 }, {});
 
 console.log('tagsStatistic : ', tagsStatistic);
