@@ -1,0 +1,33 @@
+.gallery {}
+
+.gallery .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.gallery .list-item {
+    margin-bottom: 20px;
+}
+
+.img {
+    width: 370px;
+    height: 294px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: blue;
+}
+
