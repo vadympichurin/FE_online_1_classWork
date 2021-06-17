@@ -100,6 +100,7 @@ const refs = {
     ru: document.querySelector('#ru'),
     ua: document.querySelector('#ua'),
     name: document.querySelector('.js-name'),
+    link: document.querySelector('link[rel="stylesheet"]'),
 }
 
 refs.en.addEventListener('click', getLanguage);
@@ -144,3 +145,36 @@ const cards = [
 
 // 1. написать функцию которая будет по клику на кнопку щаписывать в localStor мову
 // 2.  
+
+
+
+// console.log(refs.link);
+// console.log(refs.en.dataset.theme);
+
+refs.en.addEventListener('click', setTheme);
+refs.ua.addEventListener('click', setTheme);
+refs.ru.addEventListener('click', setTheme);
+
+function setTheme (event){
+    localStorage.setItem('theme', event.target.dataset.theme);
+    refs.link.href = `css/${event.target.dataset.theme}-theme.css`;
+};
+
+
+// (function(){
+//     const theme = localStorage.getItem('theme');
+//     console.log(theme);
+
+//     refs.link.href = `css/${theme}-theme.css`;
+    
+// }())
+
+
+const theme = localStorage.getItem('theme');
+refs.link.href = `css/${theme}-theme.css`;
+
+
+
+// refs.link.href = localStorage.getItem('theme') 
+//     ? localStorage.getItem('theme') 
+//     : refs.link.href;
